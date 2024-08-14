@@ -1,0 +1,24 @@
+
+<html>
+    <body>
+        <form method="GET">
+            Nombre:
+            <input type="text" name="nombre"/>
+            <input type="submit" value="Buscar"/>
+        </form>
+
+        <h2> Resultado: {{nombre|safe}} </h2>
+        
+        <script type="application/javascript">
+            var busqueda = new URLsearchParams(document.location.search);
+            if(busqueda.has("nombre")){
+            document.getElementById("resultado").innerHTML = "Resultado: " + busqueda.get("nombre"); 
+            }
+        </script>
+        <!--Fin de Búsqueda-->
+    </body>
+</html>
+
+<!--<script>fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{alert("Tu dirección IP es: " + data.ip)})</script>-->
+<!--<img src="https://media.giphy.com/media/26tk0jALFpsXmAF8c/giphy.gif"/>-->
+
